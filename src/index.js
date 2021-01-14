@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Route, Router, Switch } from 'react-router-dom';
-import routes from './routes';
+// import { Route, Router, Switch } from 'react-router-dom';
+// import routes from './routes';
+import Search from './pages/Search';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    {/* <Router>
       <Switch>
         {routes.map(route => (
           <Route
@@ -19,9 +19,9 @@ ReactDOM.render(
           />
         ))}
       </Switch>
-    </Router>
+    </Router> */}
     
-    <App />
+    <Search/>
   </React.StrictMode>,
   document.getElementById('root')
 );

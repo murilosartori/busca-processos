@@ -1,9 +1,11 @@
 //aqui importa os componentes
 
+import Search from "../pages/Search";
+
 const routes = [
     {
         path: "/",
-        component: ""
+        component: Search
     }//,
     // {
     //     path: "/search",
