@@ -3,9 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Route, Router, Switch } from 'react-router-dom';
+import routes from './routes';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Router>
+      <Switch>
+        {routes.map(route => (
+          <Route
+            key={route.path}
+            path={route.path}
+            component={route.component}
+            exact={route.exact}
+          />
+        ))}
+      </Switch>
+    </Router>
+    
     <App />
   </React.StrictMode>,
   document.getElementById('root')
