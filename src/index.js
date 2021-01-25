@@ -2,13 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-// import { Route, Router, Switch } from 'react-router-dom';
-// import routes from './routes';
-import Search from './pages/Search';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import routes from './routes';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
+
+const ambiente = process.env.NODE_ENV;
+if (ambiente !== "production") {
+  //criar servidor
+}
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Montserrat'
+  }
+});
 
 ReactDOM.render(
-  <React.StrictMode>
-    {/* <Router>
+  <ThemeProvider theme={theme}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         {routes.map(route => (
           <Route
@@ -19,10 +30,8 @@ ReactDOM.render(
           />
         ))}
       </Switch>
-    </Router> */}
-    
-    <Search/>
-  </React.StrictMode>,
+    </BrowserRouter>
+  </ThemeProvider>,
   document.getElementById('root')
 );
 

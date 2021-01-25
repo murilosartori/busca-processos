@@ -1,7 +1,7 @@
 import { Typography } from "@material-ui/core";
 
-const Title = props => {
-    const { variant, component, align, color, text } = props;
+const Texto = props => {
+    const { variant, component, align, color, text, classe, noWrap, children } = props;
     return (
         <Typography
             variant={variant}
@@ -9,10 +9,13 @@ const Title = props => {
             align={align}
             color={color}
             gutterBottom
+            className={classe}
+            noWrap={noWrap}
         >
             {text}
+            {children}
         </Typography>
     )
 }
 
-export default Title;
+export default Texto;

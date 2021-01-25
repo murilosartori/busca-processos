@@ -1,17 +1,20 @@
-//aqui importa os componentes
-
+import ResultProcesses from "../pages/Result";
 import Search from "../pages/Search";
 
-const routes = [
+const rotas = [
     {
         path: "/",
+        component: Search,
+        exact: true
+    },
+    {
+        path: "/search",
         component: Search
-    }//,
-    // {
-    //     path: "/search",
-    //     component: Search,
-    //     exact: true
-    // }
+    },
+    {
+        path: "/result/:value?",
+        component: ResultProcesses
+    }
 ]
 
-export default routes;
+export default rotas;
